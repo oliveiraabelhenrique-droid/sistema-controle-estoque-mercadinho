@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  min-height: 100%;
+  background: #f1f5f9;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f1f5f9;
+}
+/* DASHBOARD */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.indicador {
+  padding: 22px 12px;
+  border-radius: 14px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+}
+
+.indicador h3 {
+  font-size: 32px;
+  margin: 0 0 10px;
+}
+
+.indicador p {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.indicador-azul {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.indicador-vermelho {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.indicador-verde {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.indicador-azul h3,
+.indicador-azul p {
+  color: #1d4ed8;
+}
+
+.indicador-vermelho h3,
+.indicador-vermelho p {
+  color: #b91c1c;
+}
+
+.indicador-verde h3,
+.indicador-verde p {
+  color: #15803d;
+}
+
+@media (max-width: 600px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+}
