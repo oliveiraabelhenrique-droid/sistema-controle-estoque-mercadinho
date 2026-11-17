@@ -1,24 +1,29 @@
+
 import { TestBed } from '@angular/core/testing';
 import { App } from './app';
 
-describe('App', () => {
+describe('Sistema de Controle de Estoque do Mercadinho', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('deve criar a aplicação corretamente', () => {
     const fixture = TestBed.createComponent(App);
     const app = fixture.componentInstance;
+
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('deve exibir o título do mercadinho', async () => {
     const fixture = TestBed.createComponent(App);
+
     await fixture.whenStable();
+
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, sistema-controle-estoque-mercadinho');
+    const titulo = compiled.querySelector('h1')?.textContent;
+
+    expect(titulo).toContain('Mercadinho Exemplo');
   });
 });
