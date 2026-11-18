@@ -1,0 +1,31 @@
+
+name: CI - Sistema do Mercadinho
+
+on:
+  push:
+    branches: [main, melhoria-documentacao]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-e-testes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Executar build
+        run: npm run build
+
+      - name: Executar testes automatizados
+        run: npm test -- --watch=false --coverage
